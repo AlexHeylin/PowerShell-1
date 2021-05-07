@@ -14,7 +14,7 @@
  
 $ProxyCount = 2
 
-$AddtionalAccountSets = 0
+$AdditionalAccountSets = 0
  
 #This will be the user name used to sign in to execute scripts
 
