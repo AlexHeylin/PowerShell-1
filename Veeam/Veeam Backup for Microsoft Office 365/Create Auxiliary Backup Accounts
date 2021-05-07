@@ -70,7 +70,7 @@ $VBOOrg = "aperaturelabs.onmicrosoft.com"
  
  $PasswordProfile.ForceChangePasswordNextLogin = $false
 
- $AccountAmount = ($ProxyCount * 8) + ($AddtionalAccountSets * 8)
+ $AccountAmount = ($ProxyCount * 8) + ($AdditionalAccountSets * 8)
  
  $Names = for ($number = 1 ; $number -le $AccountAmount ; $number++){$number | % tostring VeeamBackupMO365AuxiliaryAccount00000}
 
