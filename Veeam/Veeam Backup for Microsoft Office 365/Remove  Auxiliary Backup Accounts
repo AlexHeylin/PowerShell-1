@@ -1,6 +1,6 @@
 #This will be the user name used to sign in to execute scripts
 
-$AzureAdmin = "rin@aperaturelabs.biz"
+$AzureAdmin = "admin@company.biz"
 
 #First you must install/import the AzureAD, MsolService, and Veeam backup for Microsoft Office 365 Module. 
 
