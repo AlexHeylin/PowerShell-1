@@ -12,9 +12,9 @@
 
  #Here will specify the number of users to add to the Organization
  
-$ProxyCount = 2
+$ProxyCount = 1
 
-$AdditionalAccountSets = 0
+$AdditionalAccountSets = 1
  
 #This will be the user name used to sign in to execute scripts
 
