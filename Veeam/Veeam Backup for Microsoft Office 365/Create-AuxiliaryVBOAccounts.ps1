@@ -2,7 +2,8 @@
 
  #This script must be run in administrative PowerShell 
 
- #This script will create a security group if it does not already exist and users with the proper permissions to backup with Microsoft Office 365. Once the users have been created, they will be assigned to the security group. 
+ #This script will create a security group if it does not already exist and users with the proper permissions to backup with Microsoft Office 365. 
+ #Once the users have been created, they will be assigned to the security group. 
 
  #If the script does not run because Execution Policy is disabled in the system the following line will help 
 
@@ -11,10 +12,12 @@
  #Before running the script there are Three values that need to be entered specific to your company and preference below $AccountAmount, $AzureAdmin, and $VBOOrg
 
  #Here will specify the number of users to add to the Organization
- 
-$ProxyCount = 1
 
-$AdditionalAccountSets = 1
+# This will generate 8 accounts per proxy 
+$ProxyCount = 1 
+
+# This will generate 8 x this number additional accounts. 0 is fine unless you find you need even more accounts per proxy
+$AdditionalAccountSets = 0
  
 #This will be the user name used to sign in to execute scripts
 
@@ -31,6 +34,7 @@ $VBOOrg = Read-host "Enter your organization value as it appears in Veeam Backup
  write-host "Supply admin credentials for this AzureAD."
  $UserCredential = Get-Credential #-Credential $AzureAdmin 
 
+ Write-Host "Installing AzureAD module. This might take some time, and generate prompt the first time"
  Install-Module -name AzureAD 
 
  Import-Module -Name AzureAD -ErrorAction SilentlyContinue 
