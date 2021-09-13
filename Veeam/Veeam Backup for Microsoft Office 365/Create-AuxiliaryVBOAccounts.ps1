@@ -18,17 +18,18 @@ $AdditionalAccountSets = 0
  
 #This will be the user name used to sign in to execute scripts
 
-$AzureAdmin = "rin@aperaturelabs.biz"
+#$AzureAdmin = "rin@aperaturelabs.biz"
 
 #This will be your organization value as it appears in Veeam Backup for Office 365
 
-$VBOOrg = "aperaturelabs.onmicrosoft.com"
+$VBOOrg = Read-host "Enter your organization value as it appears in Veeam Backup for Office 365. i.e. aperaturelabs.onmicrosoft.com"
 
 #-------------------------------------------------------------------------------------------
  
  #First you must install and import the AzureAD, and Veeam backup for Microsoft Office 365 Module. 
  
- $UserCredential = Get-Credential -Credential $AzureAdmin 
+ write-host "Supply admin credentials for this AzureAD."
+ $UserCredential = Get-Credential #-Credential $AzureAdmin 
 
  Install-Module -name AzureAD 
 
