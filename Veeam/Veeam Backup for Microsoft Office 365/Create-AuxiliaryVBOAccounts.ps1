@@ -47,15 +47,11 @@ $VBOOrg = Read-host "Enter your organization value as it appears in Veeam Backup
 
  #This section will query the existing security group or create the security Group if you have not already 
 
-  $SecurityGroup = Get-AzureADGroup -Filter "DisplayName eq 'VBO v5 Backup Aux Accounts'" 
+ $SecurityGroup = Get-AzureADGroup -Filter "DisplayName eq 'VBO v5 Backup Aux Accounts'" 
 
-  If (!$SecurityGroup) 
-
-     { 
-
-         $SecurityGroup = New-AzureADGroup -DisplayName "VBO v5 Backup Aux Accounts" -MailEnabled $false -SecurityEnabled $true -MailNickName "NotSet" 
-
-     } 
+If (!$SecurityGroup) { 
+    $SecurityGroup = New-AzureADGroup -DisplayName "VBO v5 Backup Aux Accounts" -MailEnabled $false -SecurityEnabled $true -MailNickName "NotSet" 
+} 
 
  Write-Host "Generate Security Group Complete" 
  
