@@ -84,13 +84,12 @@ $AzureDomain = ($AzureAD.Tenant).Domain
 $GroupUsers = @()
 
 foreach ($Name in $Names)
-    {
+{
  #-------------------------------------------------------------------------------------------
 
  #Generates each new AD user and adds user to security group.
         
         $CheckUser = Get-AzureADUser -SearchString $Name
-
         While (!$CheckUser)
             {
 
@@ -266,13 +265,13 @@ foreach ($member in $members)
         
     }
 
-Write-Host "Adding accounts to console"
+Write-Host "Users password set complete and accounts ready to add to VBO"
+
+Write-Host "Adding accounts to VBO - this can take a while"
 
 Start-Sleep -Seconds 4
 
 Set-VBOOrganization -Organization $Org -BackupAccounts $setacc
-
-Write-Host "Users password set complete"
 
 Write-Host "Users added to Veeam Backup for Microsoft Office 365 Complete"
  
